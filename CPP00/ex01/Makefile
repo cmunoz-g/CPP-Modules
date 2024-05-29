@@ -12,7 +12,7 @@ $(OBJFOLDER)%.o: $(FOLDER)%.cpp
 	$(CXX) $(CXXFLAGS) -I$(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CXX) -o $(NAME) $(OBJS)\
+	$(CXX) -o $(NAME) $(OBJS)
 
 all: $(NAME)
 
