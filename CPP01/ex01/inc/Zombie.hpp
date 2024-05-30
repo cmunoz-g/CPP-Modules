@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 09:39:39 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/29 09:39:40 by camunozg         ###   ########.fr       */
+/*   Created: 2024/05/29 09:39:27 by camunozg          #+#    #+#             */
+/*   Updated: 2024/05/30 10:17:30 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-#include "Contact.hpp"
+#include <iostream>
 
-class PhoneBook {
+class Zombie {
 private:
-	Contact	_contacts[8];
-	int		_index;
+	std::string _name;
 
 public:
-	PhoneBook(void) : _index(0) {}
-	~PhoneBook(void) {}
-	void	add(void);
-	void	search(void);
+	Zombie() {}
+	~Zombie();
+	void 	announce( void ) const;
+	void	zombieName ( std::string name);
 };
+
+Zombie *zombieHorde ( int N, std::string name);
 
 #endif

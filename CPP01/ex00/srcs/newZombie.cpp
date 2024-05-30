@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 09:39:39 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/29 09:39:40 by camunozg         ###   ########.fr       */
+/*   Created: 2024/05/29 09:45:05 by camunozg          #+#    #+#             */
+/*   Updated: 2024/05/30 08:58:45 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
-
-class PhoneBook {
-private:
-	Contact	_contacts[8];
-	int		_index;
-
-public:
-	PhoneBook(void) : _index(0) {}
-	~PhoneBook(void) {}
-	void	add(void);
-	void	search(void);
-};
-
-#endif
+Zombie *newZombie( std::string name )
+{
+	Zombie *zombiePtr = new Zombie(name);
+	return (zombiePtr);
+}
