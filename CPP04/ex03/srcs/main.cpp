@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 12:24:56 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/14 13:30:15 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:08:21 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
-
-// Revisar leaks!
 
 int main()
 {
@@ -53,6 +51,10 @@ int main()
 	std::cout << std::endl;
 
 	me->equip(new Cure());								// Trying to equip while the inventory is full.
+	
+	Character *deMe = dynamic_cast<Character*>(me);		// Saving the address of the materia to avoid memory leaks.
+	AMateria *uneq = deMe->getMateria(3);
+	
 	me->unequip(3);										// Unequipping
 	me->equip(new Cure());								// Equipping again
 	std::cout << std::endl;
@@ -67,6 +69,7 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	delete uneq;
 
     return 0;
 }

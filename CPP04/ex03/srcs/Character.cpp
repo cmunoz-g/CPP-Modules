@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:05:47 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/14 13:24:39 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:03:38 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,16 @@ void Character::equip( AMateria *m ) { // Should I check for m to be null?
 	else {
 		while (i < 4 && !equipped) {
 			if (_inventory[i] == NULL) {
-				_inventory[i] = m->clone();
+				_inventory[i] = m;
 				std::cout << m->getType() << " was equipped by " << _name << " at slot " << i << "\n";
 				equipped = true;
 			}
 			i++;
-		}
-		if (!equipped)
+		} 
+		if (!equipped) {
 			std::cout << "The inventory is full, try unequipping one slot!\n";
+			delete m;
+		}
 	}
 }
 

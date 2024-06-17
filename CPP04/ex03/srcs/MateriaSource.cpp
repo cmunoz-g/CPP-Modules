@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 12:02:57 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/14 13:19:11 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:54:27 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,16 @@ void MateriaSource::learnMateria( AMateria *materia ) {
 
 	while (i < 4 && !learned) {
 		if (_inventory[i] == NULL) {
-			_inventory[i] = materia->clone();
+			_inventory[i] = materia;
 			std::cout << materia->getType() << " was learned at slot " << i << "\n";
 			learned = true;
 		}
 		i++;
 	}
-	if (!learned)
+	if (!learned) {
 		std::cout << "The inventory is full!\n";
+		delete materia;
+	}
 }
 
 AMateria *MateriaSource::createMateria( const std::string &type ) {
