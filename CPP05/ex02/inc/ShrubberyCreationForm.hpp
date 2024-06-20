@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:37:32 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 13:55:53 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:51:11 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "AForm.hpp"
 #include <fstream>
+#include <cstdlib>
 
 const std::string ASCII_TREE =
 "     *\n"

@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 FOLDER = srcs/
 OBJFOLDER = obj/
 INCLUDES = inc/
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJS = $(SRCS:%.cpp=$(OBJFOLDER)%.o)
 
 $(OBJFOLDER)%.o: $(FOLDER)%.cpp

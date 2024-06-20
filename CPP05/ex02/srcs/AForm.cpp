@@ -6,14 +6,14 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:35:27 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 13:48:57 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:04:47 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm( void ) : _name("Random form"), _signed(false), _signGrade(150), _execGrade(150), _target("Random target") {
-	std::cout << CYAN << "A new Random form was dropped at the desk...\n" << RESET;
+	std::cout << CYAN << "A new form was dropped at the desk:\n" << RESET;
 }
 
 AForm::AForm( const std::string name, const int sign, const int exec, const std::string target ) : _name(name), _signed(false), _signGrade(sign), _execGrade(exec), _target(target) {
@@ -21,7 +21,7 @@ AForm::AForm( const std::string name, const int sign, const int exec, const std:
 		throw(GradeTooHighException());
 	else if (sign > 150 || exec > 150)
 		throw(GradeTooLowException());
-	std::cout << CYAN << "A new form, " << _name << ", was dropped at the desk...\n" << RESET;
+	std::cout << CYAN << "A new form was dropped at the desk:\n" << RESET;
 }
 
 AForm::AForm( const AForm &toCopy ) : _name(toCopy._name), _signed(toCopy._signed), _signGrade(toCopy._signGrade), _execGrade(toCopy._execGrade), _target(toCopy._target) {
@@ -77,6 +77,13 @@ void AForm::beSigned( const Bureaucrat &signer ) {
 		_signed = true;
 	else
 		throw(GradeTooLowException());
+}
+
+void AForm::execCheck( const Bureaucrat &executor ) const {
+	if (!getSigned())
+		throw(FormNotSignedException());
+	else if (executor.getGrade() > _execGrade)
+		throw(GradeTooHighException());
 }
 
 /**/

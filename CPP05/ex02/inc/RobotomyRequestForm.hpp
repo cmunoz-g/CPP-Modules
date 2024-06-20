@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:52:41 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 14:00:33 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:30:53 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
-#include <random>
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyRequestForm : public AForm {
 

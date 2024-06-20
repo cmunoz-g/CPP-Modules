@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:16:59 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 14:19:41 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:52:30 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ public:
 	/* Misc. member functions */
 	void beSigned( const Bureaucrat &signer );
 	virtual void execute( const Bureaucrat &executor ) const = 0;
+	void execCheck( const Bureaucrat &executor ) const;
 	
 private:
 

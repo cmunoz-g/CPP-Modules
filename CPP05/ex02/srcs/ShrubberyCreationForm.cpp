@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:54:40 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 14:04:22 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 13:53:14 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : AForm("Rand
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm &toCopy ) : AForm(toCopy) {
 	*this = toCopy;
-	std::cout << YELLOW << _name << " was photocopied\n" << RESET;
+	std::cout << YELLOW << getName() << " was photocopied\n" << RESET;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=( ShrubberyCreationForm &other ) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=( const ShrubberyCreationForm &other ) {
 	(void)other;
 	return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) {
-	std::cout << RED << "The shrubbery creation form \"" << _name << "\" got thrown in the shredding machine!\n" << RESET;
+	std::cout << RED << "The shrubbery creation form \"" << getName() << "\" got thrown in the shredding machine!\n" << RESET;
 }
 
 /**/
@@ -39,17 +39,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void ) {
 void ShrubberyCreationForm::execute( const Bureaucrat &executor ) const {
 	std::ofstream outFile;
 	
-	if (!_signed)
-		throw(FormNotSignedException());
-	else if (executor.getGrade() > _execGrade)
-		throw(GradeTooLowException());
+	execCheck(executor);
 		
-	outFile.open(_target + "_shrubbery");
+	std::string filename = getTarget() + "_shrubbery";
+	outFile.open(filename.c_str());
 	if (!outFile) {
 		std::cerr << "Error while opening the file\n";
 		exit(EXIT_FAILURE);
 	}
 	outFile << ASCII_TREE;
-	std::cout << MAGENTA << "A beautiful Ascii Tree was created in " << _target << "_shrubbery!\n" << RESET;
+	std::cout << MAGENTA << "A beautiful Ascii Tree was created in " << getTarget() << "_shrubbery!\n" << RESET;
 	outFile.close();
 }

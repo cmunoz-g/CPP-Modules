@@ -6,12 +6,12 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:09:22 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 14:14:00 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:00:26 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat( void ) : _name("Unnamed Bureaucrat"), _grade(150) {
 	std::cout << CYAN << _name << " with a grade of " << _grade << " was just hired!" << RESET << "\n";
@@ -87,7 +87,7 @@ void Bureaucrat::decrementGrade( int n ) {
 	std::cout << CYAN << _name << " had their grade decremented by " << n << ", now at: " << _grade << RESET << "\n"; 
 }
 
-void Bureaucrat::signForm( Form &form ) {
+void Bureaucrat::signForm( AForm &form ) {
 	if (form.getSigned())
 		return ;
 	try {
@@ -102,11 +102,11 @@ void Bureaucrat::signForm( Form &form ) {
 
 void Bureaucrat::executeForm( const AForm &form ) {
 	try {
-		form.execute();
+		form.execute(*this);
+		std::cout << MAGENTA << _name << " executed " << form.getName() << std::endl << RESET;
 	}
 	catch (std::exception &e) {
 		std::cout << RED << "The form " << form.getName() << " couldn't be executed by " << _name << " because: ";
 		std::cout << e.what() << std::endl << RESET;
 	}
-	std::cout << MAGENTA << _name << " executed " << form.getName() << std::endl << RESET;
 }
