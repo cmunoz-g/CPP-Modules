@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:27:36 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/25 10:22:38 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/27 11:10:07 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,56 +34,60 @@ void ScalarConverter::convert( std::string literal ) {
 	data.impossible_char = false;
 	data.non_displayable_char = false;
 
-	char type = getType(literal);
-	
-	if (type == 'e') {
-		std::cerr << "Wrong format\n";
-		exit(EXIT_FAILURE);
-	}
-	else if (type == 'c') {
-		data.c = literal[0];
-		data.i = static_cast<int>(data.c);
-		data.f = static_cast<float>(data.c);
-		data.d = static_cast<double>(data.c);
-	}
-	else if (type == 'i') {
-		if (isOutOfRange( literal, data )) {
-			data.f = static_cast<float>(data.l);
-			data.d = static_cast<double>(data.l);
-			data.impossible_char = true;
+	if (checkIfPseudo(literal, data))
+		printValues(data);
+	else {
+		char type = getType(literal);
+		
+		if (type == 'e') {
+			std::cerr << "Wrong format\n";
+			exit(EXIT_FAILURE);
 		}
-		else {
-			data.i = atoi(literal.c_str());
+		else if (type == 'c') {
+			data.c = literal[0];
+			data.i = static_cast<int>(data.c);
+			data.f = static_cast<float>(data.c);
+			data.d = static_cast<double>(data.c);
+		}
+		else if (type == 'i') {
+			if (isOutOfRange( literal, data )) {
+				data.f = static_cast<float>(data.l);
+				data.d = static_cast<double>(data.l);
+				data.impossible_char = true;
+			}
+			else {
+				data.i = atoi(literal.c_str());
+				if (data.i <= 127 && data.i >= 0)
+					data.c = static_cast<char>(data.i);
+				else
+					data.impossible_char = true;
+				data.f = static_cast<float>(data.i);
+				data.d = static_cast<double>(data.i);
+			}
+		}
+		else if (type == 'f') {
+			std::string temp = literal.erase(literal.size() - 1);
+			std::stringstream ss(temp);
+			ss >> data.f;
+			data.i = static_cast<int>(data.f);
+			data.d = static_cast<double>(data.f);
 			if (data.i <= 127 && data.i >= 0)
 				data.c = static_cast<char>(data.i);
 			else
 				data.impossible_char = true;
-			data.f = static_cast<float>(data.i);
-			data.d = static_cast<double>(data.i);
 		}
+		else if (type == 'd') {
+			std::stringstream ss(literal);
+			ss >> data.d;
+			data.i = static_cast<int>(data.d);
+			data.f = static_cast<float>(data.d);
+			if (data.i <= 127 && data.i >= 0)
+				data.c = static_cast<char>(data.i);
+			else
+				data.impossible_char = true;
+		}	
+		printValues(data);
 	}
-	else if (type == 'f') {
-		std::string temp = literal.erase(literal.size() - 1);
-		std::stringstream ss(temp);
-		ss >> data.f;
-		data.i = static_cast<int>(data.f);
-		data.d = static_cast<double>(data.f);
-		if (data.i <= 127 && data.i >= 0)
-			data.c = static_cast<char>(data.i);
-		else
-			data.impossible_char = true;
-	}
-	else if (type == 'd') {
-		std::stringstream ss(literal);
-		ss >> data.d;
-		data.i = static_cast<int>(data.d);
-		data.f = static_cast<float>(data.d);
-		if (data.i <= 127 && data.i >= 0)
-			data.c = static_cast<char>(data.i);
-		else
-			data.impossible_char = true;
-	}	
-	printValues(data);
 }
 
 /**/
@@ -102,11 +106,6 @@ char getType( std::string literal ) {
 	return ('e');
 }
 
-bool isDecimalPartZero( double value ) {
-	double intPart;
-	double fracPart = std::modf(value, &intPart);
-	return (fracPart == 0.0);
-}
 
 void printValues( DataTypes data ) {
 	std::cout << "char: ";
@@ -136,4 +135,36 @@ void printValues( DataTypes data ) {
 	if (isDecimalPartZero(data.d))
 		std::cout << ".0";
 	std::cout << std::endl;
+}
+
+bool checkIfPseudo( std::string literal, DataTypes &data ) {
+	if (literal == "-inff" || literal == "+inff") {
+		if (literal == "-inff")
+			data.f = -std::numeric_limits<float>::infinity();
+		else 
+			data.f = std::numeric_limits<float>::infinity();
+		data.d = static_cast<double>(data.f);
+		data.impossible_char = true;
+		data.impossible_int = true;
+		return (true);
+	}
+	else if (literal == "-inf" || literal == "+inf") {
+		if (literal == "-inf")
+			data.d = -std::numeric_limits<double>::infinity();
+		else 
+			data.d = std::numeric_limits<double>::infinity();
+		data.f = static_cast<float>(data.d);
+		data.impossible_char = true;
+		data.impossible_int = true;
+		return (true);
+	}
+	else if (literal == "nan") {
+		data.d = std::numeric_limits<double>::quiet_NaN();
+		data.f = static_cast<float>(data.d);
+		data.impossible_char = true;
+		data.impossible_int = true;
+		return (true);
+	}
+	else
+		return (false);
 }

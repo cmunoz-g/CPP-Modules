@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 09:30:02 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/25 10:26:01 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:56:02 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,10 @@ bool isOutOfRange( std::string literal, DataTypes &data) {
 		data.out_of_range_int = true;
 		return (true);
 	}
+}
+
+bool isDecimalPartZero( double value ) {
+	double intPart;
+	double fracPart = std::modf(value, &intPart);
+	return (fracPart == 0.0);
 }
