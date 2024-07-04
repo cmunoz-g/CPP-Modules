@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 12:16:58 by camunozg          #+#    #+#             */
-/*   Updated: 2024/07/04 12:33:57 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/07/04 12:54:59 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <iostream>
 #include <cstddef>
 
-template <typename T, typename Func>
-void iter(T *arr, std::size_t len, Func func) {
+template <typename T>
+void iter(T *arr, std::size_t len, void (*func)(const T &)) {
 	for (std::size_t i = 0; i < len; i++) {
 		func(arr[i]);
 	}
