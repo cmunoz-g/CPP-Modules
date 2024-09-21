@@ -14,7 +14,7 @@ This repository contains 10 modules, each focusing on different aspects of C++ a
 - **CPP05**: Error handling with exceptions.
 - **CPP06**: Introduction to the STL (Standard Template Library) and its containers.
 - **CPP07**: Advanced usage of templates and iterators.
-- **CPP08**: Multi-threading and concurrency in C++.
+- **CPP08**: Templated containers, iterators, and algorithms.
 - **CPP09**: File I/O, serialization, and working with external resources.
 
 ## How to Use This Repository
@@ -39,5 +39,6 @@ Replace `CPP0X` with the module number you want to explore.
     ./program_name
      ```
 ## Learning Path
-The exercises in this project follow a gradual learning curve. Start from CPP00 and progress sequentially. If you want to give it a go, feel free to start from any module and explore C++.
+If you want to give it a go, feel free to start from any module and explore C++.
+The exercises in this project follow a gradual learning curve. Start from CPP00 and progress sequentially. 
    
