@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 FOLDER = srcs/
 OBJFOLDER = obj/
 INCLUDES = inc/
-SRCS = main.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 OBJS = $(SRCS:%.cpp=$(OBJFOLDER)%.o)
 
 $(OBJFOLDER)%.o: $(FOLDER)%.cpp
