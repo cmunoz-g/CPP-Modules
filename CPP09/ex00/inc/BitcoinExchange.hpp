@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:01:20 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/24 12:49:49 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:37:56 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ public:
 	BitcoinExchange &operator=( const BitcoinExchange &other);
 
 	void loadData( void );											// Loads data from the .csv onto the map
-	//void processInputFile( std::string file );						// Opens file and checks for errors, calculates
-	void printData( void );
+	void processInputFile( std::string fileName );						// Opens file and checks for errors, calculates
+	static void calculate( std::string date, std::string value);
+	static bool checkDate( std::string date );
 	
 private:
 
