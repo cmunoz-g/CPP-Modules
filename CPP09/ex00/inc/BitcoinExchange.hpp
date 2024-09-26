@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:01:20 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/24 13:37:56 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:47:39 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 #include <string>
 #include <map>
 #include <sstream>
+#include <iomanip>
+
+bool	isLeapYear( int year );
+int		strToInt( std::string str);
+void	error(std::string errorMsg);
+void 	printFloat( float num );
 
 class BitcoinExchange {
 	
@@ -32,9 +38,11 @@ public:
 
 	void loadData( void );											// Loads data from the .csv onto the map
 	void processInputFile( std::string fileName );						// Opens file and checks for errors, calculates
-	static void calculate( std::string date, std::string value);
+	void calculate(std::string date, float value);
 	static bool checkDate( std::string date );
-	
+	static bool isValidLine(std::string line);
+
+
 private:
 
 	std::map<std::string, float> _data;
