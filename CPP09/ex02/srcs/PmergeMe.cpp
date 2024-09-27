@@ -6,7 +6,7 @@
 /*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 08:47:23 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/27 10:27:30 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/09/27 11:54:44 by camunozg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,18 @@ PmergeMe::PmergeMe( int argc, char *argv[]) {
 			std::stringstream ss(str);
 			int num;
 			if (!(ss >> num)) {
-				std::cerr << "Invalid input" << std::endl;
+				std::cerr << "Error: Invalid input (wrong character)" << std::endl;
+				exit(EXIT_FAILURE);
+			}
+			else if (num < 0) {
+				std::cerr << "Error: Invalid input (negative number)" << std::endl;
 				exit(EXIT_FAILURE);
 			}
 			_vector.push_back(num);
 			_deque.push_back(num);
 		}
 	}
-
+	_unsorted = _vector;
 }
 
 PmergeMe::PmergeMe( const PmergeMe &toCopy ) {
@@ -46,6 +50,7 @@ PmergeMe::~PmergeMe( void ) {}
 PmergeMe &PmergeMe::operator=( const PmergeMe &other ) {
 	if (this != &other) {
 		_vector = other.getVector();
+		_unsorted = _vector;
 		_deque = other.getDeque();
 	}
 	return (*this);
@@ -53,7 +58,28 @@ PmergeMe &PmergeMe::operator=( const PmergeMe &other ) {
 
 /**/
 
-std::vector<int> PmergeMe::getVector( void ) const {
+void PmergeMe::calculate(void)
+{
+	int vectorDuration = mergeSort(_vector);
+	int dequeDuration = mergeSort(_deque);
+	size_t size = _unsorted.size();
+	
+	std::cout << "Before: ";
+	for (size_t i = 0; i < size; i++) 
+		std::cout << _unsorted[i] << " ";
+	std::cout << std::endl;
+
+	std::cout << "After: ";
+	for (size_t i = 0; i < _vector.size(); i++)
+		std::cout << _vector[i] << " ";
+	std::cout << std::endl;
+
+	std::cout << "Time to process a range of " << size << "elements with std::vector : " << vectorDuration << " us" << std::endl;
+	std::cout << "Time to process a range of " << size << "elements with std::deque : " << dequeDuration << " us" << std::endl;
+}
+
+std::vector<int> PmergeMe::getVector(void) const
+{
 	return (_vector);
 }
 
@@ -72,25 +98,10 @@ std::vector<int> PmergeMe::parseStringWithSpaces( const std::string &str ) {
 			exit(EXIT_FAILURE);
 		}
 
-	while (iss >> num)
-		nums.push_back(num);
+	while (iss >> num) {
+		if (num >= 0)
+			nums.push_back(num);
+	}
 	
 	return (nums);
 }
-
-// public:
-
-// 	template <typename T>
-// 	void displayNums(const T& container);
-// 	void mergeSortVector( void );
-// 	void mergeSortDeque( void );
-
-// 	std::vector<int> getVector( void );
-// 	std::deque<int> getDeque( void );
-
-// 	/**/
-
-// private:
-// 	std::vector<int> _vector;
-// 	std::deque<int> _deque;
-	
