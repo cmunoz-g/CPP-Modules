@@ -6,14 +6,14 @@ Welcome to the **CPP Modules** repository! This project is part of the 42 School
 ## Project Overview
 This repository contains 10 modules, each focusing on different aspects of C++ and consisting of exercises that progressively increase in complexity.:
 
-- **CPP00**: Basics of C++ syntax, basic data types, and first steps into OOP.
-- **CPP01**: Further exploration of OOP concepts like inheritance and polymorphism.
-- **CPP02**: Introduction to operator overloading and encapsulation.
+- **CPP00**: Basics of C++ syntax, namespaces, classes, and OOP introduction.
+- **CPP01**: Memory allocation, pointers, references, and basic OOP.
+- **CPP02**: Operator overloading and Orthodox Canonical Form.
 - **CPP03**: Deeper dive into inheritance, polymorphism, and abstract classes.
-- **CPP04**: Understanding subtyping and interface implementation.
+- **CPP04**: Subtype polymorphism and abstract classes.
 - **CPP05**: Error handling with exceptions.
-- **CPP06**: Introduction to the STL (Standard Template Library) and its containers.
-- **CPP07**: Advanced usage of templates and iterators.
+- **CPP06**: C++ type casting and serialization.
+- **CPP07**: Function and class templates.
 - **CPP08**: Templated containers, iterators, and algorithms.
 - **CPP09**: File I/O, serialization, and working with external resources.
 
