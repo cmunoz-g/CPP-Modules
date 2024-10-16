@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 18:59:10 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/30 10:17:27 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:57:30 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie() {};
 
 Zombie::~Zombie( void ) {
 	if (_name.empty() == false)
