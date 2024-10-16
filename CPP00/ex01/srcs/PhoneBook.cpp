@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 09:39:46 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/29 09:39:47 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:16:54 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+/* Constructor, Destructor*/
+
+PhoneBook::PhoneBook(void) : _index(0) {}
+PhoneBook::~PhoneBook(void) {}
+
+/* Member functions */
 
 void	PhoneBook::add(void)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 09:39:36 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/29 09:39:37 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:12:15 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,24 @@ private:
 	std::string _darkestSecret;
 
 public:
-	Contact(void) {}
-	~Contact(void) {}
+	Contact(void);
+	~Contact(void);
 	void	create(void);
 	void	print(void);
 	void	list(int index);
 	bool	exists(void);
+
+	std::string getFirst(void) const;
+	std::string getLast(void) const;
+	std::string getNick(void) const;
+	std::string getNum(void) const;
+	std::string getSecret(void) const;
+	
+	void setFirst(std::string first);
+	void setLast(std::string last);
+	void setNick(std::string nick);
+	void setNum(std::string num);
+	void setSecret(std::string secret);
 };
 
 #endif

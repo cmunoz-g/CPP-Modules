@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 09:39:43 by camunozg          #+#    #+#             */
-/*   Updated: 2024/05/29 09:39:44 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:59:42 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+// Contact should have getters and setters
 
 void	reset(void)
 {
