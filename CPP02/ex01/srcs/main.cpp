@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 12:26:00 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/12 12:31:33 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 10:15:01 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int main( void ) {
 	std::cout << "d is " << d << std::endl;
 	
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
+	
 	return 0;
 }
 
