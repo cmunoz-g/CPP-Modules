@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:00:50 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:15:36 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:07:17 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ public:
 	FragTrap &operator=( const FragTrap &other );
 	~FragTrap(); 
 	void highFivesGuys( void );
-
 };
 
 

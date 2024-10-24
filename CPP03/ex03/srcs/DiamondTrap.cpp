@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:26:08 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:58:23 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:06:40 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ) : ClapTrap("Unnamed_clap_name"), FragTrap(), ScavTrap(), _name("Unnamed") {
+DiamondTrap::DiamondTrap( void ) : _name("Unnamed") {
 	std::cout << "A new DiamondTrap was created, with no name!\n\n";
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap() {
 	if (name.empty())
 		_name = "A Random DiamondTrap";
 	else
 		_name = name;
+	ClapTrap::_name = _name + "_clap_name";
 	std::cout << "A new DiamondTrap named " << _name << " was created!\n\n";
 }
 

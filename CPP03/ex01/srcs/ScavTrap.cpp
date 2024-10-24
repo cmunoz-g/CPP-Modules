@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:30:47 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:42:37 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:48:29 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ ScavTrap::~ScavTrap( void ) {
 
 void ScavTrap::guardGate( void ) {
 	if (_guardMode)
-		std::cout << "The ScavTrap " << _name << " was already in Gate keeper mode!\n";
+		std::cout << "The ScavTrap " << _name << " is already on Gate keeper mode!\n";
 	else {
 		_guardMode = true;
 		std::cout << "The ScavTrap " << _name << " is now on Gate keeper mode!\n"; 
@@ -61,7 +61,7 @@ void ScavTrap::guardGate( void ) {
 }
 
 void ScavTrap::attack( const std::string& target ) {
-	if (_energyPoints > 0) {
+	if (_energyPoints > 0 && _hitPoints > 0) {
 		if (target.empty())
 			std::cout << "The ScavTrap " << _name << " attacks no one, causing " << _attackDamage << " points of damage!\n";
 		else

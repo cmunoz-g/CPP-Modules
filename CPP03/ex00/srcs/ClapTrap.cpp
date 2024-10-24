@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 09:11:54 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:42:47 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:40:49 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ ClapTrap &ClapTrap::operator=( const ClapTrap &other) {
 /* Other Member Functions */
 
 void ClapTrap::attack( const std::string& target ) {
-	if (_energyPoints > 0) {
+	if (_energyPoints > 0 && _hitPoints > 0) {
 		if (target.empty())
 			std::cout << _name << " attacks no one, causing " << _attackDamage << " points of damage!\n";
 		else
@@ -54,7 +54,7 @@ void ClapTrap::attack( const std::string& target ) {
 		_energyPoints--;
 	}
 	else 
-		std::cout << _name << " doesn't have enough energy to attack, so he takes a nap instead!\n";
+		std::cout << _name << " doesn't have enough energy or hit points to attack, so he takes a nap instead!\n";
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
@@ -67,7 +67,7 @@ void ClapTrap::takeDamage( unsigned int amount ) {
 }
 
 void ClapTrap::beRepaired( unsigned int amount ) {
-	if (_energyPoints > 0) {
+	if (_energyPoints > 0 && _hitPoints > 0) {
 		if (_hitPoints == 10)
 			std::cout << _name << " is already at full health!\n";
 		else {
@@ -79,5 +79,5 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 		}
 	}
 	else
-		std::cout << _name << " has no energy points left, he can't be repaired!\n";
+		std::cout << _name << " has no energy or hit points left, he can't be repaired!\n";
 }

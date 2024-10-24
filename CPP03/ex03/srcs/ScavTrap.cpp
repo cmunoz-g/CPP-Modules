@@ -3,28 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:30:47 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:42:19 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:46:41 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) : _guardMode(false) {
-	_name = "Unnamed";
+ScavTrap::ScavTrap( void ) : ClapTrap("Unnamed_clap_name"), _guardMode(false) {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
 	std::cout << "A new ScavTrap was created, with no name!\n";
 }
 
-ScavTrap::ScavTrap( std::string name ) : _guardMode(false) {
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name + "_clap_name"), _guardMode(false) {
 	if (name.empty())
 		_name = "A Random ScavTrap";
-	else
-		_name = name;
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;

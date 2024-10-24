@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 09:49:56 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 12:10:06 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:52:09 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main() {
 	frag1.attack("Paul");				// Attacks
 	frag2.takeDamage(50);				// Takes damage
 	frag2.takeDamage(70);				// Takes damage, health at 0
-	frag2.beRepaired(100);				// Repaired to 100 health.
+	frag2.beRepaired(100);				// Can't be repaired, health at 0
 
 	std::cout << std::endl;
 	
