@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:36:57 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/13 14:12:25 by camunozg         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:18:49 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,24 @@ int main()
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
 
+		const Animal w = *j;
+
 		std::cout << std::endl;
 		
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl << std::endl;
 		
-		i->makeSound(); 									
-		j->makeSound();										
-		meta->makeSound();	
-										
+		std::cout << "Animal i: ";
+		i->makeSound();
+
+		std::cout << "Animal j: ";						
+		j->makeSound();	
+
+		std::cout << "Animal w: ";			
+		w.makeSound();
+
+		std::cout << "Animal meta: ";
+		meta->makeSound();
 		std::cout << std::endl;
 		
 		delete meta;
