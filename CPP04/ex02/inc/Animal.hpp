@@ -20,7 +20,7 @@ class AAnimal {
 
 public:
 	virtual ~AAnimal( void ); 
-	virtual void makeSound ( void ) const;
+	virtual void makeSound ( void ) const = 0;
 	std::string getType( void ) const;
 
 protected:

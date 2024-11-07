@@ -43,7 +43,3 @@ AAnimal::~AAnimal( void ) {
 std::string AAnimal::getType( void ) const {
 	return (_type);
 }
-
-void AAnimal::makeSound( void ) const {
-	std::cout << "* Random animal noises *\n";
-}

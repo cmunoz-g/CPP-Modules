@@ -16,13 +16,15 @@ Cat::Cat( void ) : Animal("Cat"), _brain(new Brain) {
 	std::cout << "A new cat was born!\n";
 }
 
-Cat::Cat( const Cat &toCopy ) {
-	*this = toCopy;
+Cat::Cat( const Cat &toCopy ) : Animal(toCopy), _brain(new Brain(*toCopy._brain)) {
+	std::cout << "A new cat was born through copying\n";
 }
 
 Cat &Cat::operator=( const Cat &other ) {
 	if (this != &other) {
 		_type = other.getType();
+		delete _brain;
+		_brain = new Brain(*other._brain);
 	}
 	return (*this);
 }

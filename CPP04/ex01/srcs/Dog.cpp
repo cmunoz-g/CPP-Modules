@@ -16,14 +16,15 @@ Dog::Dog( void ) : Animal("Dog"), _brain(new Brain) {
 	std::cout << "A new dog was born!\n";
 }
 
-Dog::Dog( const Dog &toCopy ) {
-	*this = toCopy;
+Dog::Dog( const Dog &toCopy ) : Animal(toCopy), _brain(new Brain(*toCopy._brain)) {
 	std::cout << "A new dog was born through copying\n";
 }
 
 Dog &Dog::operator=( const Dog &other ) {
 	if (this != &other) {
 		_type = other.getType();
+		delete _brain;
+		_brain = new Brain(*other._brain);
 	}
 	return (*this);
 }
