@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:21:03 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/27 11:10:18 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:59:20 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ private:
 	ScalarConverter( ScalarConverter &toCopy );
 	ScalarConverter &operator=( ScalarConverter &other );
 	virtual ~ScalarConverter( void );
-
 
 };
 
