@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 12:32:06 by camunozg          #+#    #+#             */
-/*   Updated: 2024/07/09 13:36:35 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:25:40 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void Span::addNumber( const int n ) {
 	}
 	_nbrs.push_back(n);
 }
-
-// Deberia cambiar esto para que inserte hasta el numero que pueda?
 
 void Span::addNumber( std::vector<int>::iterator start, std::vector<int>::iterator end ) {
 	if (_nbrs.size() + std::distance(start, end) > _N) 
