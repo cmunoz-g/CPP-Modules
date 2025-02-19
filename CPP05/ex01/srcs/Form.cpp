@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:35:27 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 13:04:23 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:41:37 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ Form::~Form( void ) {
 
 /**/
 
-Form &Form::operator=( const Form &other ) { // Comprobar si esto debe ser asi (creo que no tiene sentido copiar solo _signed)
-	(void)other;
-	return (*this);
+Form &Form::operator=( const Form &other ) {
+	if (this != &other) {
+        _signed = other._signed;
+    }
+    return *this;
 }
 
 std::ostream &operator<<( std::ostream &os, const Form &form ) {

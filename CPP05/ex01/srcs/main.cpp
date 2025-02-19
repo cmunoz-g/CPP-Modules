@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 12:41:36 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/19 12:12:01 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:38:33 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main() {
 		std::cout << e.what() << std::endl;
 	}
 
-	invoice.beSigned(jane);								// Form get signed
+	invoice.beSigned(jane);								// Form gets signed
 	jane.signForm(accounts);							// Bureaucrat signs form
 	jane.signForm(invoice);								// Trying to sign a previously signed form does nothing
 	

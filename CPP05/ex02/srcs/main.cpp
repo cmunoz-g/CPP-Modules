@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:14:20 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/20 14:07:10 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:42:43 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-
-// Decidir en CPP05 si quiero que al copiar con =, se copie el estado de firmado o no.
 
 int main() {
 	PresidentialPardonForm pres_form("Mike");

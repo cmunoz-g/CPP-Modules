@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:35:27 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/21 09:55:39 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:43:40 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ AForm::~AForm( void ) {
 
 /**/
 
-AForm &AForm::operator=( const AForm &other ) { // Comprobar si esto debe ser asi (creo que no tiene sentido copiar solo _signed)
-	(void)other;
-	return (*this);
+AForm &AForm::operator=( const AForm &other ) {
+	if (this != &other) {
+        _signed = other._signed;
+    }
+    return *this;
 }
 
 std::ostream &operator<<( std::ostream &os, const AForm &AForm ) {

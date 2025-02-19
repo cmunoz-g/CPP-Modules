@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:16:59 by camunozg          #+#    #+#             */
-/*   Updated: 2024/06/21 09:30:38 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:43:03 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ private:
 };
 
 std::ostream &operator<<( std::ostream &os, const AForm &form );
-
 
 #endif
