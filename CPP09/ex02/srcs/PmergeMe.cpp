@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 08:47:23 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/27 11:54:44 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:15:38 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ void PmergeMe::calculate(void)
 		std::cout << _vector[i] << " ";
 	std::cout << std::endl;
 
-	std::cout << "Time to process a range of " << size << "elements with std::vector : " << vectorDuration << " us" << std::endl;
-	std::cout << "Time to process a range of " << size << "elements with std::deque : " << dequeDuration << " us" << std::endl;
+	std::cout << "Time to process a range of " << size << " elements with std::vector : " << vectorDuration << " us" << std::endl;
+	std::cout << "Time to process a range of " << size << " elements with std::deque : " << dequeDuration << " us" << std::endl;
 }
 
 std::vector<int> PmergeMe::getVector(void) const

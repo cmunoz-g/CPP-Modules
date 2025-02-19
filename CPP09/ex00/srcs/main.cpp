@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:36:24 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/26 11:49:18 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:01:33 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-// perform tests for both incorrect data.csv and input.txt
 
 void printFloat( float num ) {
 	if (num == static_cast<int>(num))
@@ -23,8 +21,6 @@ void printFloat( float num ) {
 		std::string formatedNum = oss.str();
 
 		formatedNum.erase(formatedNum.find_last_not_of('0') + 1, std::string::npos);
-		//if (formatedNum.back == '.')
-			//formatedNum.pop_back();
 		std::cout << formatedNum;
 	}
 }

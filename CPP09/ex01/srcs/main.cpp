@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:36:24 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/26 12:50:49 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:08:14 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+// NOTA: Solo se aceptan expresiones encapsuladas por "", un unico arg. 
+// Antes de entregar, razonar si deberia cambiar eso para poder gestionar cada num/operando si vienen cada uno en un arg
 
 int	main(int argc, char *argv[]) {
 	

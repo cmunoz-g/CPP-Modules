@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:01:23 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/26 11:48:33 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:59:40 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void BitcoinExchange::processInputFile( std::string fileName ) {
 	std::getline(file, line); 
 	// while line, read line
 	while (std::getline(file, line)) {
-		// checkear que esto sea asi y que no tenga que imprimir solo date (mirar hoja de correccion y el subject)
 		if (!isValidLine(line))
 		{
 			std::cerr << "Error: bad input => " << line << std::endl; 
@@ -98,7 +97,6 @@ void BitcoinExchange::processInputFile( std::string fileName ) {
 		// print
 		else
 			calculate(date, value); // check if date exists, if not go for closest (lower_bound)
-			// lower bound is a method of std::map, check what happens if i remove 2009-01-02 condition from checkDate
 	}
 }
 
@@ -154,9 +152,6 @@ bool BitcoinExchange::checkDate( std::string date ) {
 	
 	return (true);
 }
-
-// check if date exists, if not go for closest (lower_bound)
-// lower bound is a method of std::map, check what happens if i remove 2009-01-02 condition from checkDate
 
 void BitcoinExchange::calculate( std::string date, float value) {
 	// iterator that starts at date

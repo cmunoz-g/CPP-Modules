@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:01:20 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/26 11:47:39 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:01:19 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
 	BitcoinExchange &operator=( const BitcoinExchange &other);
 
 	void loadData( void );											// Loads data from the .csv onto the map
-	void processInputFile( std::string fileName );						// Opens file and checks for errors, calculates
+	void processInputFile( std::string fileName );					// Opens file and checks for errors, calculates
 	void calculate(std::string date, float value);
 	static bool checkDate( std::string date );
 	static bool isValidLine(std::string line);

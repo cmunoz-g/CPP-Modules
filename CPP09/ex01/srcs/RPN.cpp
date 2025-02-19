@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:01:23 by camunozg          #+#    #+#             */
-/*   Updated: 2024/09/26 12:58:08 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:06:56 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // while parsing the string, if i find a number, push it into the stack
 // if an operator is found, pop the two numbers and perform the operation, push it back to the stack
 // if a character thats not digit or operand is found, output error
-// how should we manage 4 4 + + + +
 
 RPN::RPN() {}
 
