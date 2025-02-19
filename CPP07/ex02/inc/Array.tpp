@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camunozg <camunozg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 09:25:56 by camunozg          #+#    #+#             */
-/*   Updated: 2024/07/09 10:50:53 by camunozg         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:19:33 by cmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,4 @@ template <typename T>
 std::size_t Array<T>::size( void ) const {
 	return (_size);
 }
+
