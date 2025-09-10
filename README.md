@@ -1,44 +1,50 @@
 # 📚 CPP Modules
 
 ## Introduction
-Welcome to the **CPP Modules** repository! This project is part of the 42 School curriculum and serves as an introduction to the C++ programming language. The goal of these modules is to familiarize you with Object-Oriented Programming (OOP) concepts using C++, derived from your old friend C.
+
+This repository is part of the 42 School curriculum and introduces the C++ programming language. It focuses on Object-Oriented Programming (OOP) concepts and modern C++ features, building on the foundations of C.
 
 ## Project Overview
-This repository contains 10 modules, each focusing on different aspects of C++ and consisting of exercises that progressively increase in complexity.:
 
-- **CPP00**: Basics of C++ syntax, namespaces, classes, and OOP introduction.
-- **CPP01**: Memory allocation, pointers, references, and basic OOP.
-- **CPP02**: Operator overloading and Orthodox Canonical Form.
-- **CPP03**: Deeper dive into inheritance, polymorphism, and abstract classes.
-- **CPP04**: Subtype polymorphism and abstract classes.
-- **CPP05**: Error handling with exceptions.
-- **CPP06**: C++ type casting and serialization.
-- **CPP07**: Function and class templates.
-- **CPP08**: Templated containers, iterators, and algorithms.
-- **CPP09**: File I/O, serialization, and working with external resources.
+The project is divided into 10 modules, each targeting a specific aspect of C++ through progressively challenging exercises:
+
+* **CPP00**: Introduction to OOP basics — namespaces, classes, member functions, initialization, static/const usage
+* **CPP01**: Memory management — allocation, references, pointers to members, and control flow with switch
+* **CPP02**: Ad-hoc polymorphism — operator overloading and Orthodox Canonical Form
+* **CPP03**: Inheritance — class hierarchies and behavior reuse
+* **CPP04**: Subtype polymorphism — abstract classes and interfaces
+* **CPP05**: Exceptions — error handling and program robustness
+* **CPP06**: Type casting — safe and explicit conversions between types
+* **CPP07**: Templates — generic programming with parameterized types
+* **CPP08**: STL containers and algorithms — using standard templates effectively
+* **CPP09**: Advanced STL — applying containers and algorithms to practical problems
 
 ## How to Use This Repository
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/cmunoz-g/CPP-Modules.git
-    ```
-2. **Navigate to a Module**: 
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/cmunoz-g/CPP-Modules.git
+   ```
+
+2. **Navigate to a module**:
+
    ```bash
    cd CPP-Modules/CPP0X
-    ```
-Replace `CPP0X` with the module number you want to explore.
+   ```
 
-3. **Compile and Run**:
+   Replace `CPP0X` with the desired module number.
 
-   Each exercise comes with a `Makefile`. Simply run:
+3. **Compile and run**:
+   Each exercise provides a `Makefile`. Build with:
+
    ```bash
    make
    ```
-   Execute the compiled binary:
-    ```bash
-    ./program_name
-     ```
-## Learning Path
-If you want to give it a go, feel free to start from any module and explore C++.
-The exercises in this project follow a gradual learning curve. Start from CPP00 and progress sequentially. 
-   
+
+   Then execute the binary:
+
+   ```bash
+   ./program_name
+   ```
+
